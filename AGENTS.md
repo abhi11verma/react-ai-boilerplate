@@ -31,6 +31,22 @@ Detailed rules live in `/context/`. Read the relevant file before starting any t
 - **Colors** → CSS variable tokens only (`text-foreground`, `bg-primary`). Never hardcode hex/rgb
 - **No new dependencies** without explicit user approval
 
+## Starting a New Project
+
+The repo includes a sample Task Manager app. Before building anything, check whether it has been cleaned:
+
+```bash
+ls src/components/TaskManager.tsx 2>/dev/null && echo "NEEDS CLEANING" || echo "already clean"
+```
+
+If the file exists, run:
+
+```bash
+just new
+```
+
+This removes all example files (`Counter.tsx`, `TaskManager.tsx`, `counter.store.ts`, `tasks.store.ts`, `src/components/ui/`) and resets `src/main.tsx` to a blank shell. Do this before writing any project code.
+
 ## Verification — Run Before Finishing Any Task
 
 ```bash

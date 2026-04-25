@@ -90,6 +90,37 @@ just dev
 
 Open `http://localhost:5173` — you'll see the Task Manager example app wired up with Zustand and shadcn components.
 
+### Starting a new project
+
+The repo ships with a working example app so you can verify everything is wired up correctly. Before building your own app, remove it:
+
+```bash
+just new
+```
+
+This removes:
+
+- `src/components/Counter.tsx` and `src/components/TaskManager.tsx`
+- `src/store/counter.store.ts` and `src/store/tasks.store.ts`
+- `src/components/ui/` (all installed shadcn components)
+- Resets `src/main.tsx` to a minimal blank shell
+
+After running it, `src/main.tsx` looks like this:
+
+```tsx
+createRoot(rootElement).render(
+  <StrictMode>
+    <Providers>
+      {/* your app goes here */}
+    </Providers>
+  </StrictMode>
+);
+```
+
+Then build your app from scratch using the conventions in `/context`.
+
+> **Both `CLAUDE.md` and `AGENTS.md` instruct agents to run `just new` before writing any project code.** If you're using an AI agent, you can skip the manual step — just tell it to start and it will clean the example files itself.
+
 ### Add a shadcn component
 
 ```bash

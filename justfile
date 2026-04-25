@@ -36,3 +36,8 @@ list-ui:
 # Available: slate | gray | zinc | neutral | stone | red | rose | orange | green | blue | yellow | violet
 apply-theme base-color:
     npx shadcn@latest init --base-color {{base-color}} --yes
+
+# Remove example files and reset to a clean starting point
+# Run this once after cloning before building your app
+new:
+    bash scripts/new.sh

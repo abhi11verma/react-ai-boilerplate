@@ -31,9 +31,22 @@ Detailed rules live in `/context/`. Read the relevant file before starting any t
 - **Colors** → CSS variable tokens only (`text-foreground`, `bg-primary`). Never hardcode hex/rgb
 - **No new dependencies** without explicit user approval
 
+## Starting a New Project
+
+The repo ships with a sample Task Manager app (Zustand + shadcn) so you can see everything working. Before building your own app, clean it out:
+
+```bash
+just new
+```
+
+This removes `Counter.tsx`, `TaskManager.tsx`, `counter.store.ts`, `tasks.store.ts`, all installed shadcn components (`src/components/ui/`), and resets `src/main.tsx` to a minimal shell. Run it once after cloning, then start building.
+
+**Do not** skip this step and build on top of the example files.
+
 ## Key Commands
 
 ```bash
+just new                   # clean example files — run once after cloning
 just dev                   # start dev server
 just build                 # tsc + vite build
 just lint                  # eslint
