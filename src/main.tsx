@@ -2,7 +2,7 @@ import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 
 import { Providers } from "@/app/providers";
-import { Counter } from "@/components/Counter";
+import { TaskManager } from "@/components/TaskManager";
 
 import "@/index.css";
 
@@ -12,8 +12,8 @@ if (!rootElement) throw new Error("Root element #root not found");
 createRoot(rootElement).render(
   <StrictMode>
     <Providers>
-      <main className="flex min-h-screen items-center justify-center bg-background">
-        <Counter />
+      <main className="flex min-h-screen items-start justify-center bg-background px-4 py-12">
+        <TaskManager />
       </main>
     </Providers>
   </StrictMode>

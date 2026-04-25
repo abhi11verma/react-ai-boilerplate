@@ -1,13 +1,13 @@
 import js from "@eslint/js";
 import { defineConfig, globalIgnores } from "eslint/config";
 import globals from "globals";
-import pluginImport from "eslint-plugin-import";
+import pluginImport from "eslint-plugin-import-x";
 import reactHooks from "eslint-plugin-react-hooks";
 import reactRefresh from "eslint-plugin-react-refresh";
 import tseslint from "typescript-eslint";
 
 export default defineConfig([
-  globalIgnores(["dist/**", "node_modules/**"]),
+  globalIgnores(["dist/**", "node_modules/**", "src/components/ui/**"]),
 
   // Base JS rules (all files)
   js.configs.recommended,
@@ -28,7 +28,7 @@ export default defineConfig([
     plugins: {
       "react-hooks": reactHooks,
       "react-refresh": reactRefresh,
-      import: pluginImport,
+      "import-x": pluginImport,
     },
     languageOptions: {
       ecmaVersion: 2020,
@@ -39,7 +39,7 @@ export default defineConfig([
       },
     },
     settings: {
-      "import/resolver": {
+      "import-x/resolver": {
         typescript: {
           project: "./tsconfig.app.json",
         },
@@ -60,8 +60,8 @@ export default defineConfig([
       ],
       "@typescript-eslint/no-import-type-side-effects": "error",
 
-      "import/no-cycle": ["error", { maxDepth: Infinity }],
-      "import/order": [
+      "import-x/no-cycle": ["error", { maxDepth: Infinity }],
+      "import-x/order": [
         "error",
         {
           groups: ["builtin", "external", "internal", "parent", "sibling", "index", "type"],
@@ -69,7 +69,7 @@ export default defineConfig([
           alphabetize: { order: "asc", caseInsensitive: true },
         },
       ],
-      "import/no-duplicates": "error",
+      "import-x/no-duplicates": "error",
 
       "no-console": ["warn", { allow: ["warn", "error"] }],
     },
